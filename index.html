@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>선수 강화 페이지</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .player-card {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    img.player-image {
+      max-width: 200px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .button:hover {
+      background-color: #45a049;
+    }
+    p.result-message {
+      font-size: 1.2em;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="player-card">
+    <h1>잭 쉬 금카찍기</h1>
+    <img class="player-image" src="그릴리시.jpg" alt="선수 이미지">
+    <button class="button" onclick="enhancePlayer()">선수 강화하기</button>
+    <p class="result-message" id="result"></p>
+  </div>
+
+  <script>
+    let enhancementLevel = 0;
+
+    function enhancePlayer() {
+      const successChance = Math.random(); // 0과 1 사이의 랜덤한 값 생성
+
+      if (successChance > 0.4) {
+        enhancementLevel++;
+        document.getElementById('result').innerText = `선수 강화 성공! 강화 레벨: +${enhancementLevel}`;
+      } else {
+        enhancementLevel = 0;
+        document.getElementById('result').innerText = `선수 강화 실패... 강화 레벨: +${enhancementLevel}`;
+      }
+    }
+  </script>
+</body>
+</html>
